@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+/* ====== Start Global Role ====== */
+:root {
+    --maincolor: rgb(255, 48, 91);
+    --transition: 0.3s;
+    --main-padding: 100px 0;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: "Alegreya Sans", sans-serif;
+}
+i {
+    cursor: pointer;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* ====== End Global Role ====== */
+/* ====== Start Companent ======  */
+.main-heading {
+    position: relative;
+}
+.heading {
+    font-size: 35px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.bar-heading {
+    position: absolute;
+    background-color: var(--maincolor);
+    border-radius: 6px;
+    width: 3.5cm;
+    height: 1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.main-heading::before,
+.main-heading::after {
+    content: '';
+    position: absolute;
+    background-color: var(--maincolor);
+    border-radius: 6px;
+    width: 2.5cm;
+    height: 1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.main-heading::before {
+    bottom: 5px;
+}
+.main-heading::after {
+    bottom: -5px;
+}
+/* ====== Endt Companent ====== */
+/* ====== Start Back Up ====== */
+.back-up {
+    position: fixed;
+    z-index: 1090;
+    right: -40px;
+    bottom: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
+    background-color: var(--maincolor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.6s;
+}
+.back-up i {
+    color: #fff;
+}
+/* ====== Start Header ====== */
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0 ,0 ,0 ,0.7) ,rgba(0, 0 ,0 ,0.7) ) , url(../images/slider-02.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.header .container nav {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container nav.light-animation {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #18181a;
+    z-index: 1080;
+    padding: 0 10%;
+    transition: background-color 0.3s;
+}
+.header .container nav .logo {
+    color: var(--maincolor);
+    font-size: 21px;
+    cursor: pointer;
+}
+.header .container nav ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.header .container nav ul li a {
+    display: block;
+    padding: 30px 0;
+    font-size: 18px;
+    color: #fff;
+    transition: var(--transition);
+}
+.header .container nav ul li a:hover {
+    color: var(--maincolor);
+}
+.header .container nav ul li .active {
+    color: var(--maincolor);
+}
+.header .container nav i {
+    color: white;
+    font-size: 20px;
+    display: none;
+}
+@media ( max-width: 767px) {
+    .header .container nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 10%;
+        background-color: #222;
+        width: 80%;
+        transition: 1s;
+        overflow: hidden;
+        height: 0;
+    }
+    .header .container nav ul.show{
+        height: 300px;
+        padding: 15px 0;
+    }
+    .header .container nav ul li a {
+        padding: 0;
+    }
+    .header .container nav .logo {
+        margin-left: 40px;
+    }
+    .header .container nav i {
+        display: block;
+        margin-right: 40px;
+    }
+    .header .container nav.light-animation {
+        padding: 0;
+    }
+}
+.header .content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 80px);
+}
+.header .content-header .main h2 {
+    color: #fff;
+}
+.header .content-header .main p:first-of-type {
+    color: var(--maincolor);
+    font-size: 50px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.header .content-header .main p:last-of-type {
+    color: #fff;
+    font-size: 25px;
+    position: relative;
+}
+.auto-write {
+    color: var(--maincolor);
+}
+/* ====== End Header ====== */
+/* ====== Start Info ====== */
+.info {
+    padding: var(--main-padding);
+}
+.info .container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.info .image {
+    width: 400px;
+    position: relative;
+}
+.info .image img {
+    border-radius: 6px;
+    width: 100%;
+    display: block;
+}
+.info .image::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    width: 95%;
+    height: 95%;
+    border: 8px solid #555555;
+    border-radius: 6px;
+    z-index: -1;
+}
+.info .image .layer {
+    position: absolute;
+    background-color: rgba(0 ,0 ,0 ,0.5);
+    left: 0;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    transition: var(--transition);
+    overflow: hidden;
+}
+.info .image:hover .layer {
+    height: 100%;
+}
+.info .image .layer .icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+.info .image .layer .icon i {
+    font-size: 25px;
+    margin-right: 7px;
+    color: #fff;
+    transition: var(--transition);
+}
+.info .image .layer .icon i:hover {
+    color: var(--maincolor);
+}
+.info .content {
+    width: 60%;
+}
+.info .content h2{
+    font-size: 30px;
+    position: relative;
+    margin-left: 7px;
+}
+.info .content h2::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -7px;
+    height: 0.7cm;
+    width: 4px;
+    background-color: var(--maincolor);
+    border-radius: 5px;
+}
+.info .content h6 {
+    color: #777;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: normal;
+    border-bottom: 1px dashed #777;
+    margin-bottom: 15px;
+}
+.info .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 10px;
+}
+.info .grid {
+    display: flex;
+    gap: 5px;
+}
+.info .grid p:first-child{
+    color: #222;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+}
+.info .grid p:last-child {
+    color: #777;
+    padding: 0;
+    font-size: 18px;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+}
+.info .btn {
+    margin-top: 20px;
+}
+.info .btn button {
+    background-color: var(--maincolor);
+    border-radius: 6px;
+    border: 0;
+    padding: 10px 10px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    width: 4cm;
+    cursor: pointer;
+}
+@media (max-width: 800px) {
+    .info .image::before {
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    .info .container{
+        flex-direction: column;
+    }
+    .info .image {
+        width: 80%;
+    }
+    .info .content {
+        width: 100%;
+    }
+}
+/* ====== End Info ====== */
+/* ====== Start Servicesc ====== */
+.services {
+    padding: var(--main-padding);
+    background-color: #f1f1f1;
+}
+.services .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    margin-top: 80px;
+}
+.services .items .item {
+    text-align: center;
+    padding: 20px;
+    transition: var(--transition);
+}
+.services .items .item:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #00000020;
+}
+.services .items .item i {
+    font-size: 30px;
+    color: var(--maincolor);
+    transition: var(--transition);
+}
+.services .item:hover  i {
+    transform: scale(1.2);
+}
+.services .items .item h2 {
+    margin: 20px 0;
+}
+.services .items .item p {
+    line-height: 1.7;
+    color: #777;
+}
+/* ====== End Servicesc ====== */
+/* ====== Start Portfolio ====== */
+.portfolio {
+    padding: var(--main-padding);
+}
+.portfolio ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    gap: 20px;
+}
+.portfolio ul li.active {
+    color: var(--maincolor);
+}
+.portfolio ul li {
+    color: #222;
+    font-size: 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.portfolio ul li:hover {
+    color: var(--maincolor);
+}
+.portfolio .boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+}
+.portfolio .boxs .box {
+    position: relative;
+}
+.portfolio .boxs .box img {
+    width: 100%;
+    display: block;
+}
+.portfolio .boxs .box .layer-image {
+    position: absolute;
+    background-color: rgba(0 ,0 ,0 ,0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.5s;
+}
+.portfolio .boxs .box .layer-image:hover {
+    opacity: 1;
+}
+.portfolio .boxs .box .layer-image i {
+    font-size: 28px;
+    color: var(--maincolor);
+    position: absolute;
+    left: 90%;
+    bottom: 10%;
+}
+.model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000050;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.model .image-change {
+    background-image: url("../images/5.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 60%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.model .image-change #close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+.model .image-change i {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ====== End Portfolio ====== */
+/* ====== Start Counter  ====== */
+.counter {
+    padding: var(--main-padding);
+    background-color: #f1f1f1;
+}
+.counter .boxs-counter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
+    gap: 20px;
+}
+.counter .boxs-counter .box-counter {
+    text-align: center;
+}
+.counter .boxs-counter .box-counter i {
+    color: var(--maincolor);
+    font-size: 25px;
+}
+.counter .boxs-counter .box-counter h2 {
+    margin: 10px 0;
+    font-size: 30px;
+}
+.counter .boxs-counter .box-counter p {
+    color: #777;
+    font-size: 20px;
+}
+/* ====== End Counter ====== */
+/* ====== Start Client ====== */
+.client {
+    padding: var(--main-padding);
+}
+.client .box-client {
+    background-color: #f1f1f1;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 40px;
+    position: relative;
+    z-index: 3;
+    margin: auto;
+    margin-top: 40px;
+}
+.client .box-client::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 18px;
+    border-radius: 10px;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--maincolor);
+}
+.client .box-client .image img {
+    border-radius: 50%;
+    width: 3cm;
+}
+.client .box-client .image::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border: 100px solid ;
+    border-color:  var(--maincolor) transparent transparent var(--maincolor) ;
+    z-index: -1;
+}
+.client .box-client .content h4 {
+    color: #777;
+    margin: 10px 0;
+}
+.client .box-client .content h4 i {
+    margin-right: 5px;
+}
+.client .box-client .content p {
+    margin-bottom: 10px;
+    color: #777;
+}
+.client .box-client .content .icon i {
+    color: orange;
+}
+@media (max-width: 1000px) {
+    .client .box-client {
+        width: 100%;
+    }
+}
+@media (max-width: 750px) {
+    .client .box-client {
+        flex-direction: column;
+    }
+}
+/* ====== End Client ====== */
+/* ====== Start Blog ====== */
+.blog {
+    padding: var(--main-padding);
+    background-color: #f1f1f1;
+}
+.blog .boxs-blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+    margin-top: 50px;
+}
+.blog .boxs-blog .box-blog {
+    background-color: #fff;
+    box-shadow: 0 0 10px #00000020;
+}
+.blog .boxs-blog .box-blog img {
+    width: 100%;
+}
+.blog .boxs-blog .box-blog h4 {
+    padding: 10px;
+    font-size: 20px;
+    color: #777;
+}
+.blog .boxs-blog .box-blog h2 {
+    padding: 0 10px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.blog .boxs-blog .box-blog h2:hover {
+    color: var(--maincolor);
+}
+.blog .boxs-blog .box-blog p {
+    padding: 10px;
+    color: #777;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.blog .boxs-blog .box-blog a {
+    display: block;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    color: #222;
+    font-size: 17px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+.blog .boxs-blog .box-blog a:hover {
+    color: var(--maincolor);
+}
+.blog .boxs-blog .box-blog a > i {
+    margin-left: 5px;
+    color: var(--maincolor);
+}
+/* ====== End Blog ====== */
+/* ====== Start contact ====== */
+.contact {
+    padding: var(--main-padding);
+}
+.contact .main {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+.contact .main .two-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.contact .main .two-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border-color: #777;
+}
+.contact .main input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 1px solid #777;
+}
+.contact textarea:focus,
+.contact input:focus {
+    outline-color: var(--maincolor);
+}
+.contact .main textarea {
+    width: 100%;
+    height: 3cm;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 6px;
+}
+.contact .main button {
+    background-color: var(--maincolor);
+    padding: 10px;
+    display: block;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.contact .main .box-contact {
+    width: 50%;
+    margin: auto;
+}
+@media ( max-width: 1200px ){
+    .contact .main .box-contact{
+        width: 60%;
+    }
+}
+@media ( max-width: 1000px ){
+    .contact .main .box-contact{
+        width: 80%;
+    }
+}
+@media ( max-width: 767px ){
+    .contact .main .box-contact{
+        width: 90%;
+    }
+    .contact .main .two-form {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+/* ====== End contact ====== */
+/* ====== Start Footer ====== */
+.footer {
+    padding: 50px 0;
+    background-color: #333333;
+    text-align: center;
+}
+.footer .icon i {
+    color: white;
+    font-size: 25px;
+    margin-right: 5px;
+    transition: var(--transition);
+}
+.footer .icon i:hover {
+    color: var(--maincolor);
+}
+.footer .copy {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.footer .copy span {
+    color: var(--maincolor);
+}
+/* ====== End Footer ====== */
